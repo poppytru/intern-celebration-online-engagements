@@ -1,0 +1,313 @@
+/* ===== Amazon Brand Tokens ===== */
+:root {
+    --squid-ink: #161D26;
+    --smile-orange: #FF6200;
+    --white: #FFFFFF;
+    --off-white: #F5F3EF;
+    --tier1: #FF6200;
+    --tier2: #232F3E;
+    --tier3: #8B6914;
+}
+
+/* ===== Reset ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Amazon Ember', 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--squid-ink);
+    background: var(--off-white);
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+a { color: var(--smile-orange); text-decoration: underline; }
+a:hover { text-decoration: none; }
+
+/* ===== Typography ===== */
+h1 { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
+h2 { font-size: 36px; font-weight: 400; margin-bottom: 24px; color: var(--squid-ink); }
+h3 { font-size: 22px; margin-bottom: 12px; }
+
+.section-intro { font-size: 18px; margin-bottom: 32px; max-width: 860px; }
+
+/* ===== Floating Stickers ===== */
+.sticker {
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.12;
+    animation: floatSticker 20s ease-in-out infinite;
+}
+.sticker img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sticker-1 { top: 8%; left: 2%; width: 100px; animation-delay: 0s; }
+.sticker-2 { top: 22%; right: 1%; width: 120px; animation-delay: -3s; transform: rotate(12deg); }
+.sticker-3 { top: 38%; left: 1%; width: 140px; animation-delay: -7s; }
+.sticker-4 { top: 52%; right: 3%; width: 90px; animation-delay: -10s; transform: rotate(-8deg); }
+.sticker-5 { top: 65%; left: 3%; width: 110px; animation-delay: -13s; transform: rotate(5deg); }
+.sticker-6 { top: 78%; right: 2%; width: 130px; animation-delay: -16s; }
+.sticker-7 { top: 88%; left: 1%; width: 80px; animation-delay: -5s; transform: rotate(-12deg); }
+.sticker-8 { top: 45%; right: 0%; width: 100px; animation-delay: -18s; transform: rotate(15deg); }
+
+@keyframes floatSticker {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-12px) rotate(3deg); }
+    50% { transform: translateY(0) rotate(0deg); }
+    75% { transform: translateY(12px) rotate(-3deg); }
+}
+
+/* ===== Header ===== */
+header {
+    position: relative;
+    z-index: 1;
+}
+.header-banner {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* ===== Main ===== */
+main { padding: 60px 24px; position: relative; z-index: 1; }
+section { margin-bottom: 80px; }
+
+/* ===== Events Section ===== */
+.events-section {
+    background: var(--white);
+    padding: 48px 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(22,29,38,.08);
+}
+
+.events-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+}
+.gallery-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform .3s ease;
+}
+.gallery-img:hover {
+    transform: scale(1.03);
+}
+
+.quarter-events {
+    margin-bottom: 32px;
+    padding: 28px;
+    background: var(--off-white);
+    border-radius: 12px;
+    border-left: 5px solid var(--smile-orange);
+}
+.quarter-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+    font-size: 24px;
+}
+.quarter-tag {
+    display: inline-block;
+    background: var(--smile-orange);
+    color: var(--white);
+    padding: 6px 18px;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.city-chips { display: flex; flex-wrap: wrap; gap: 12px; }
+.chip {
+    background: var(--white);
+    border: 2px solid var(--smile-orange);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--squid-ink);
+    transition: all .2s ease;
+}
+.chip:hover {
+    background: var(--smile-orange);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* ===== Engagements Section ===== */
+.engagements-section {
+    background: var(--white);
+    padding: 48px 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(22,29,38,.08);
+}
+
+.quarter-block { margin-bottom: 48px; }
+.quarter-block:last-child { margin-bottom: 0; }
+.quarter-header { margin-bottom: 20px; }
+.quarter-header h3 { display: flex; align-items: center; gap: 12px; }
+.winners-note { font-size: 15px; color: #666; margin-top: 4px; }
+
+.challenges-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.challenge-card {
+    background: var(--off-white);
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    transition: all .25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.challenge-card.open { border-color: var(--smile-orange); box-shadow: 0 4px 16px rgba(255,98,0,.15); }
+.challenge-card.closed-challenge { border-color: #999; opacity: .55; }
+
+.challenge-day { font-weight: 700; font-size: 16px; }
+.challenge-tier { font-size: 13px; font-weight: 700; padding: 4px 14px; border-radius: 20px; color: var(--white); }
+.tier-1-badge { background: var(--tier1); }
+.tier-2-badge { background: var(--tier2); }
+.tier-3-badge { background: var(--tier3); }
+
+.challenge-status { font-size: 32px; margin: 4px 0; }
+.status-text { display: block; font-size: 13px; color: #888; }
+
+.challenge-desc { font-size: 14px; color: #555; }
+
+.challenge-btn {
+    display: inline-block;
+    margin-top: auto;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: background .2s;
+}
+.challenge-btn.disabled {
+    background: #ccc;
+    color: #888;
+    pointer-events: none;
+}
+.challenge-btn.active {
+    background: var(--smile-orange);
+    color: var(--white);
+}
+.challenge-btn.active:hover { background: #e55800; }
+.challenge-btn.closed-btn {
+    background: #999;
+    color: var(--white);
+    pointer-events: none;
+}
+
+/* ===== Prizes Section ===== */
+.prize-note {
+    background: #FFF3E0;
+    border-left: 4px solid var(--smile-orange);
+    padding: 16px 20px;
+    margin-bottom: 32px;
+    border-radius: 0 8px 8px 0;
+    font-size: 16px;
+    max-width: 860px;
+}
+
+.tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+}
+
+.tier-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 2px 12px rgba(22,29,38,.08);
+    position: relative;
+    overflow: hidden;
+}
+.tier-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+}
+.tier-1::before { background: var(--tier1); }
+.tier-2::before { background: var(--tier2); }
+.tier-3::before { background: var(--tier3); }
+
+.tier-badge {
+    display: inline-block;
+    color: var(--white);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.tier-day { font-size: 14px; color: #666; margin-bottom: 16px; }
+
+.prize-list { list-style: none; padding: 0; }
+.prize-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--off-white);
+    font-size: 18px;
+}
+.prize-list li:last-child { border-bottom: none; }
+.prize-list li::before { content: '✓ '; color: var(--smile-orange); font-weight: 700; margin-right: 8px; }
+
+.pick-one {
+    margin-top: 16px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--smile-orange);
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: var(--squid-ink);
+    color: var(--white);
+    padding: 32px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+footer p { font-size: 14px; }
+.footer-smile {
+    width: 80px;
+    margin-bottom: 12px;
+    filter: brightness(0) saturate(100%) invert(44%) sepia(96%) saturate(2000%) hue-rotate(10deg) brightness(100%) contrast(105%);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    h1 { font-size: 32px; }
+    h2 { font-size: 28px; }
+    .events-section,
+    .engagements-section { padding: 32px 20px; }
+    .challenges-row, .tiers-grid, .events-gallery { grid-template-columns: 1fr; }
+    .modal { padding: 24px; }
+    .crossword-wrapper { flex-direction: column; }
+    .chip { font-size: 16px; padding: 10px 18px; }
+    .sticker { display: none; }
+}
