@@ -1,350 +1,422 @@
-﻿    /* Floating Stickers */
-    .sticker { position: fixed; opacity: 0.08; pointer-events: none; z-index: 0; }
-    .sticker img { width: 100%; height: auto; }
-    .sticker-1 { width: 100px; top: 600px; left: 20px; }
-    .sticker-2 { width: 140px; top: 1200px; right: 20px; }
-    .sticker-3 { width: 150px; top: 2000px; left: 10px; }
-    .sticker-4 { width: 90px; top: 2800px; right: 30px; }
-    .sticker-5 { width: 120px; top: 3500px; left: 15px; }
-    .sticker-6 { width: 140px; top: 4200px; right: 10px; }
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTA Intern Celebrations</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Amazon Ember', system-ui, -apple-system, sans-serif;
+            background-color: #F5F3EF;
+            color: #161D26;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .header-banner { width: 100%; height: auto; display: block; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
 
-    /* Sections */
-    section { position: relative; z-index: 1; padding: 48px 0; }
-    h2 { font-size: 28px; font-weight: 700; color: #161D26; margin-bottom: 8px; }
-    h2::after { content: ''; display: block; width: 50px; height: 4px; background: #FF6200; margin-top: 10px; border-radius: 2px; }
-    .section-intro { font-size: 16px; color: #444; margin: 16px 0 28px 0; max-width: 720px; }
-    .section-intro a { color: #FF6200; text-decoration: underline; font-weight: 600; }
-    .section-intro a:hover { color: #E55800; }
+        /* Floating Stickers */
+        .sticker { position: fixed; opacity: 0.08; pointer-events: none; z-index: 0; }
+        .sticker img { width: 100%; height: auto; }
+        .sticker-1 { width: 100px; top: 600px; left: 20px; }
+        .sticker-2 { width: 140px; top: 1200px; right: 20px; }
+        .sticker-3 { width: 150px; top: 2000px; left: 10px; }
+        .sticker-4 { width: 90px; top: 2800px; right: 30px; }
+        .sticker-5 { width: 120px; top: 3500px; left: 15px; }
+        .sticker-6 { width: 140px; top: 4200px; right: 10px; }
 
-    /* Gallery */
-    .events-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 36px; }
-    .gallery-img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; transition: transform 0.2s ease; }
-    .gallery-img:hover { transform: scale(1.03); }
+        /* Sections */
+        section { position: relative; z-index: 1; padding: 48px 0; }
+        h2 { font-size: 28px; font-weight: 700; color: #161D26; margin-bottom: 8px; }
+        h2::after { content: ''; display: block; width: 50px; height: 4px; background: #FF6200; margin-top: 10px; border-radius: 2px; }
+        .section-intro { font-size: 16px; color: #444; margin: 16px 0 28px 0; max-width: 720px; }
+        .section-intro a { color: #FF6200; text-decoration: underline; font-weight: 600; }
+        .section-intro a:hover { color: #E55800; }
 
-    /* City Chips */
-    .quarter-events { margin-bottom: 24px; }
-    .quarter-label { font-size: 18px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-    .quarter-tag { background: #FF6200; color: #fff; font-size: 13px; font-weight: 700; padding: 3px 10px; border-radius: 4px; }
-    .city-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-    .chip { background: #fff; border: 1.5px solid #161D26; border-radius: 20px; padding: 6px 16px; font-size: 14px; font-weight: 500; transition: all 0.2s ease; }
-    .chip:hover { background: #FF6200; border-color: #FF6200; color: #fff; }
+        /* Gallery */
+        .events-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 36px; }
+        .gallery-img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; transition: transform 0.2s ease; }
+        .gallery-img:hover { transform: scale(1.03); }
 
-    /* Challenge Blocks */
-    .quarter-block { margin-bottom: 40px; }
-    .quarter-header h3 { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
-    .winners-note { font-size: 14px; color: #555; margin-top: 6px; }
-    .challenges-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+        /* City Chips */
+        .quarter-events { margin-bottom: 24px; }
+        .quarter-label { font-size: 18px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .quarter-tag { background: #FF6200; color: #fff; font-size: 13px; font-weight: 700; padding: 3px 10px; border-radius: 4px; }
+        .city-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+        .chip { background: #fff; border: 1.5px solid #161D26; border-radius: 20px; padding: 6px 16px; font-size: 14px; font-weight: 500; transition: all 0.2s ease; }
+        .chip:hover { background: #FF6200; border-color: #FF6200; color: #fff; }
 
-    .challenge-card {
-        background: #fff;
-        border-radius: 12px;
-        padding: 24px;
-        border: 1px solid #E8E5E0;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        transition: box-shadow 0.2s ease, transform 0.2s ease;
-    }
-    .challenge-card:hover { box-shadow: 0 6px 20px rgba(22,29,38,0.08); transform: translateY(-2px); }
-    .challenge-day { font-size: 15px; font-weight: 700; color: #161D26; }
-    .challenge-tier { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px; display: inline-block; width: fit-content; }
-    .tier-1-badge { background: #FFF0E6; color: #FF6200; }
-    .tier-2-badge, .tier-3-badge { background: #E8EBF0; color: #161D26; }
-    .challenge-status { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #888; }
-    .challenge-desc { font-size: 14px; color: #555; line-height: 1.5; }
-    .challenge-btn {
-        display: inline-block;
-        margin-top: auto;
-        padding: 10px 20px;
-        border-radius: 6px;
-        font-size: 14px;
-        font-weight: 600;
-        text-align: center;
-        text-decoration: none;
-        transition: background 0.2s ease;
-    }
-    .challenge-btn.disabled { background: #E8E5E0; color: #999; cursor: not-allowed; }
-    .challenge-btn.active { background: #FF6200; color: #fff; cursor: pointer; }
-    .challenge-btn.active:hover { background: #E55800; }
+        /* Challenge Blocks */
+        .quarter-block { margin-bottom: 40px; }
+        .quarter-header h3 { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .winners-note { font-size: 14px; color: #555; margin-top: 6px; }
+        .challenges-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
 
-    /* Prize Tiers */
-    .prize-note { font-size: 14px; color: #555; background: #fff; border-left: 4px solid #FF6200; padding: 12px 16px; border-radius: 4px; margin-bottom: 24px; }
-    .tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .tier-card {
-        background: #fff;
-        border-radius: 12px;
-        padding: 28px;
-        text-align: center;
-        border: 1px solid #E8E5E0;
-        transition: box-shadow 0.2s ease, transform 0.2s ease;
-    }
-    .tier-card:hover { box-shadow: 0 6px 20px rgba(22,29,38,0.08); transform: translateY(-2px); }
-    .tier-card.tier-1 { border-top: 4px solid #FF6200; }
-    .tier-card.tier-2 { border-top: 4px solid #161D26; }
-    .tier-card.tier-3 { border-top: 4px solid #888; }
-    .tier-card h3 { font-size: 18px; font-weight: 700; margin: 12px 0 4px; }
-    .tier-card h3::after { display: none; }
-    .tier-day { font-size: 13px; color: #777; margin-bottom: 12px; }
-    .prize-list { list-style: none; padding: 0; }
-    .prize-list li { font-size: 14px; color: #333; padding: 8px 0; border-bottom: 1px solid #F0F0F0; }
-    .prize-list li:last-child { border-bottom: none; }
-    .pick-one { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #FF6200; margin-top: 12px; }
-    .tier-badge { display: inline-block; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px; }
+        .challenge-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #E8E5E0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+        .challenge-card:hover { box-shadow: 0 6px 20px rgba(22,29,38,0.08); transform: translateY(-2px); }
+        .challenge-card.open { border-left: 4px solid #FF6200; }
+        .challenge-card.closed-challenge { opacity: 0.6; }
+        .challenge-day { font-size: 15px; font-weight: 700; color: #161D26; }
+        .challenge-tier { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px; display: inline-block; width: fit-content; }
+        .tier-1-badge { background: #FFF0E6; color: #FF6200; }
+        .tier-2-badge, .tier-3-badge { background: #E8EBF0; color: #161D26; }
+        .challenge-status { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #888; }
+        .challenge-desc { font-size: 14px; color: #555; line-height: 1.5; }
+        .challenge-btn {
+            display: inline-block;
+            margin-top: auto;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        .challenge-btn.disabled { background: #E8E5E0; color: #999; cursor: not-allowed; }
+        .challenge-btn.active { background: #FF6200; color: #fff; cursor: pointer; }
+        .challenge-btn.active:hover { background: #E55800; }
+        .challenge-btn.closed-btn { background: #ccc; color: #666; cursor: not-allowed; }
 
-    /* Footer */
-    footer { background: #161D26; padding: 32px; text-align: center; margin-top: 48px; }
-    .footer-smile { width: 80px; opacity: 0.8; }
+        /* Prize Tiers */
+        .prize-note { font-size: 14px; color: #555; background: #fff; border-left: 4px solid #FF6200; padding: 12px 16px; border-radius: 4px; margin-bottom: 24px; }
+        .tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .tier-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            text-align: center;
+            border: 1px solid #E8E5E0;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+        .tier-card:hover { box-shadow: 0 6px 20px rgba(22,29,38,0.08); transform: translateY(-2px); }
+        .tier-card.tier-1 { border-top: 4px solid #FF6200; }
+        .tier-card.tier-2 { border-top: 4px solid #161D26; }
+        .tier-card.tier-3 { border-top: 4px solid #888; }
+        .tier-card h3 { font-size: 18px; font-weight: 700; margin: 12px 0 4px; }
+        .tier-card h3::after { display: none; }
+        .tier-day { font-size: 13px; color: #777; margin-bottom: 12px; }
+        .prize-list { list-style: none; padding: 0; }
+        .prize-list li { font-size: 14px; color: #333; padding: 8px 0; border-bottom: 1px solid #F0F0F0; }
+        .prize-list li:last-child { border-bottom: none; }
+        .pick-one { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #FF6200; margin-top: 12px; }
+        .tier-badge { display: inline-block; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px; }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-        .events-gallery { grid-template-columns: repeat(2, 1fr); }
-        .challenges-row, .tiers-grid { grid-template-columns: 1fr; }
-        .container { padding: 0 16px; }
-    }
-</style>
-</head> <body>
-<!-- Floating stickers -->
-<div class="sticker sticker-1" aria-hidden="true"><img src="sticker-corgi.png" alt=""></div>
-<div class="sticker sticker-2" aria-hidden="true"><img src="sticker-laptop.png" alt=""></div>
-<div class="sticker sticker-3" aria-hidden="true"><img src="sticker-van.png" alt=""></div>
-<div class="sticker sticker-4" aria-hidden="true"><img src="sticker-corgi.png" alt=""></div>
-<div class="sticker sticker-5" aria-hidden="true"><img src="sticker-laptop.png" alt=""></div>
-<div class="sticker sticker-6" aria-hidden="true"><img src="sticker-van.png" alt=""></div>
+        /* Footer */
+        footer { background: #161D26; padding: 32px; text-align: center; margin-top: 48px; }
+        .footer-smile { width: 80px; opacity: 0.8; }
 
-<header>
-    <img src="header-banner.png" alt="Building the future starts with you — AUTA Intern Celebrations" class="header-banner">
-</header>
+        /* Responsive */
+        @media (max-width: 768px) {
+            .events-gallery { grid-template-columns: repeat(2, 1fr); }
+            .challenges-row, .tiers-grid { grid-template-columns: 1fr; }
+            .container { padding: 0 16px; }
+        }
+    </style>
+</head>
+<body>
 
-<main class="container">
+    <!-- Floating stickers -->
+    <div class="sticker sticker-1" aria-hidden="true"><img src="sticker-corgi.png" alt=""></div>
+    <div class="sticker sticker-2" aria-hidden="true"><img src="sticker-laptop.png" alt=""></div>
+    <div class="sticker sticker-3" aria-hidden="true"><img src="sticker-van.png" alt=""></div>
+    <div class="sticker sticker-4" aria-hidden="true"><img src="sticker-corgi.png" alt=""></div>
+    <div class="sticker sticker-5" aria-hidden="true"><img src="sticker-laptop.png" alt=""></div>
+    <div class="sticker sticker-6" aria-hidden="true"><img src="sticker-van.png" alt=""></div>
 
-    <!-- UPCOMING CELEBRATIONS -->
-    <section class="events-section" id="events">
-        <h2>Upcoming intern celebrations</h2>
-        <p class="section-intro">Join fellow interns at in-person celebrations across our global hubs. Find all event details nearer to the time on <a href="https://gather.a2z.com/group/ef3362df-4500-4b6f-9954-9a324a9c1ab9" target="_blank" rel="noopener">Gather</a>.</p>
+    <header>
+        <img src="header-banner.png" alt="Building the future starts with you — AUTA Intern Celebrations" class="header-banner">
+    </header>
 
-        <div class="events-gallery">
-            <img src="gallery-1.jpg" alt="BUILD — Building the future starts with U" class="gallery-img">
-            <img src="gallery-2.jpg" alt="Panel discussion at Amazon office" class="gallery-img">
-            <img src="gallery-3.jpg" alt="Leadership principles wall" class="gallery-img">
-            <img src="gallery-4.jpg" alt="Intern celebration group photo" class="gallery-img">
+    <main class="container">
+
+        <!-- UPCOMING CELEBRATIONS -->
+        <section class="events-section" id="events">
+            <h2>Upcoming intern celebrations</h2>
+            <p class="section-intro">Join fellow interns at in-person celebrations across our global hubs. Find all event details nearer to the time on <a href="https://gather.a2z.com/group/ef3362df-4500-4b6f-9954-9a324a9c1ab9" target="_blank" rel="noopener">Gather</a>.</p>
+
+            <div class="events-gallery">
+                <img src="gallery-1.jpg" alt="BUILD — Building the future starts with U" class="gallery-img">
+                <img src="gallery-2.jpg" alt="Panel discussion at Amazon office" class="gallery-img">
+                <img src="gallery-3.jpg" alt="Leadership principles wall" class="gallery-img">
+                <img src="gallery-4.jpg" alt="Intern celebration group photo" class="gallery-img">
+            </div>
+
+            <div class="quarter-events">
+                <h3 class="quarter-label"><span class="quarter-tag">Q2</span> In-person events</h3>
+                <div class="city-chips">
+                    <span class="chip">Chennai</span>
+                    <span class="chip">Luxembourg</span>
+                    <span class="chip">Bangalore</span>
+                    <span class="chip">Hyderabad</span>
+                    <span class="chip">Vancouver</span>
+                </div>
+            </div>
+            <div class="quarter-events">
+                <h3 class="quarter-label"><span class="quarter-tag">Q3</span> In-person events</h3>
+                <div class="city-chips">
+                    <span class="chip">East Palo Alto</span>
+                    <span class="chip">Munich</span>
+                    <span class="chip">Berlin</span>
+                    <span class="chip">NYC</span>
+                    <span class="chip">Austin</span>
+                    <span class="chip">Seattle</span>
+                    <span class="chip">Arlington</span>
+                    <span class="chip">London</span>
+                    <span class="chip">Dublin</span>
+                    <span class="chip">Madrid</span>
+                    <span class="chip">GCR</span>
+                    <span class="chip">Tokyo</span>
+                </div>
+            </div>
+            <div class="quarter-events">
+                <h3 class="quarter-label"><span class="quarter-tag">Q4</span> In-person events</h3>
+                <div class="city-chips">
+                    <span class="chip">São Paulo</span>
+                    <span class="chip">Mexico City</span>
+                    <span class="chip">Sydney</span>
+                    <span class="chip">Cape Town</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRIZE ENGAGEMENTS -->
+        <section class="engagements-section" id="engagements">
+            <h2>Intern prize engagements</h2>
+            <p class="section-intro">Each quarter features three challenges across Monday, Tuesday and Wednesday of the challenge week. Challenges unlock at 00:00 UTC on their day and close at 23:59 UTC on Friday of that week. Winners are announced the following Tuesday.</p>
+
+            <!-- Q2 — May 2026 -->
+            <div class="quarter-block">
+                <div class="quarter-header">
+                    <h3><span class="quarter-tag">Q2</span> May 2026</h3>
+                    <p class="winners-note">🏆 Winners announced: Tuesday 12th May</p>
+                </div>
+                <div class="challenges-row">
+                    <div class="challenge-card"
+                         data-unlock="2026-05-04T00:00:00Z"
+                         data-close="2026-05-08T23:59:00Z"
+                         data-link="https://hack.amazon.com/#2026unipitch/overview"
+                         data-link2="https://admin.pulse.aws/staffApplication/ACX4UWBQ"
+                         data-hackathon="true">
+                        <div class="challenge-day">Monday 4th May</div>
+                        <div class="challenge-tier tier-1-badge">Tier 1</div>
+                        <div class="challenge-status"><span class="lock-icon">🔒</span><span class="status-text">Locked</span></div>
+                        <p class="challenge-desc">Submit your work on the Hackathon for a Tier 1 prize. Optionally grant AUTA permission to use your content.</p>
+                        <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
+                    </div>
+                    <div class="challenge-card"
+                         data-unlock="2026-05-05T00:00:00Z"
+                         data-close="2026-05-08T23:59:00Z"
+                         data-link="https://admin.pulse.aws/staffApplication/6R6T0DB1">
+                        <div class="challenge-day">Tuesday 5th May</div>
+                        <div class="challenge-tier tier-2-badge">Tier 2 + 3</div>
+                        <div class="challenge-status"><span class="lock-icon">🔒</span><span class="status-text">Locked</span></div>
+                        <p class="challenge-desc">Complete the Tuesday challenge to win a Tier 2 and Tier 3 prize.</p>
+                        <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
+                    </div>
+                    <div class="challenge-card"
+                         data-unlock="2026-05-06T00:00:00Z"
+                         data-close="2026-05-08T23:59:00Z"
+                         data-link="https://admin.pulse.aws/staffApplication/MGT6YZLT"
+                         data-crossword="true">
+                        <div class="challenge-day">Wednesday 6th May</div>
+                        <div class="challenge-tier tier-2-badge">Tier 2 + 3</div>
+                        <div class="challenge-status"><span class="lock-icon">🔒</span><span class="status-text">Locked</span></div>
+                        <p class="challenge-desc">Solve the AUTA crossword and submit your answers for a Tier 2 and Tier 3 prize.</p>
+                        <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q3 — July 2026 -->
+            <div class="quarter-block">
+                <div class="quarter-header">
+                    <h3><span class="quarter-tag">Q3</span> July 2026</h3>
+                    <p class="winners-note">🏆 Winners announced: Tuesday 14th July</p>
+                </div>
+                <div class="challenges-row">
+                    <div class="challenge-card"
+                         data-unlock="2026-07-06T00:00:00Z"
+                         data-close="2026-07-10T23:59:00Z"
+                         data-link="https://hack.amazon.com/#2026dayinthelife/overview"
+                         data-link2="https://admin.pulse.aws/staffApplication/TMI3DJHI"
+                         data-hackathon="true">
+                        <div class="challenge-day">Monday 6th July</div>
+                        <div class="challenge-tier tier-1-badge">Tier 1</div>
+                        <div class="challenge-status"><span class="lock-icon">🔒</span><span class="status-text">Locked</span></div>
+                        <p class="challenge-desc">Submit your work on the Hackathon for a Tier 1 prize. Optionally grant AUTA permission to use your content.</p>
+                        <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
+                    </div>
+                    <div class="challenge-card"
+                         data-unlock="2026-07-07T00:00:00Z"
+                         data-close="2026-07-10T23:59:00Z"
+                         data-link="https://admin.pulse.aws/staffApplication/QXEUTQQP">
+                        <div class="challenge-day">Tuesday 7th July</div>
+                        <div class="challenge-tier tier-2-badge">Tier 2 + 3</div>
+                        <div class="challenge-status"><span class="lock-icon">🔒</span><span class="status-text">Locked</span></div>
+                        <p class="challenge-desc">Complete the Tuesday challenge to win a Tier 2 and Tier 3 prize.</p>
+                        <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
+                    </div>
+                    <div class="challenge-card"
+                         data-unlock="2026-07-08T00:00:00Z"
+                         data-close="2026-07-10T23:59:00Z"
+                         data-link="https://admin.pulse.aws/staffApplication/S98IL31A">
+                        <div class="challenge-day">Wednesday 8th July</div>
+                        <div class="challenge-tier tier-2-badge">Tier 2 + 3</div>
+                        <div class="challenge-status"><span class="lock-icon">🔒</span><span class="status-text">Locked</span></div>
+                        <p class="challenge-desc">Complete the Wednesday challenge to win a Tier 2 and Tier 3 prize.</p>
+                        <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q4 — November 2026 -->
+            <div class="quarter-block">
+                <div class="quarter-header">
+                    <h3><span class="quarter-tag">Q4</span> November 2026</h3>
+                    <p class="winners-note">🏆 Winners announced: Tuesday 10th November</p>
+                </div>
+                <div class="challenges-row">
+                    <div class="challenge-card"
+                         data-unlock="2026-11-02T00:00:00Z"
+                         data-close="2026-11-06T23:59:00Z"
+                         data-link="https://hack.amazon.com/#2026holiday/overview"
+                         data-hackathon="true">
+                        <div class="challenge-day">Monday 2nd November</div>
+                        <div class="challenge-tier tier-1-badge">Tier 1</div>
+                        <div class="challenge-status"><span class="lock-icon">🔒</span><span class="status-text">Locked</span></div>
+                        <p class="challenge-desc">Submit your work on the Hackathon for a Tier 1 prize.</p>
+                        <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
+                    </div>
+                    <div class="challenge-card"
+                         data-unlock="2026-11-03T00:00:00Z"
+                         data-close="2026-11-06T23:59:00Z"
+                         data-link="https://admin.pulse.aws/staffApplication/TPAHM2QW">
+                        <div class="challenge-day">Tuesday 3rd November</div>
+                        <div class="challenge-tier tier-2-badge">Tier 2 + 3</div>
+                        <div class="challenge-status"><span class="lock-icon">🔒</span><span class="status-text">Locked</span></div>
+                        <p class="challenge-desc">Complete the Tuesday challenge to win a Tier 2 and Tier 3 prize.</p>
+                        <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
+                    </div>
+                    <div class="challenge-card"
+                         data-unlock="2026-11-04T00:00:00Z"
+                         data-close="2026-11-06T23:59:00Z"
+                         data-link="https://admin.pulse.aws/staffApplication/EBPESHMB">
+                        <div class="challenge-day">Wednesday 4th November</div>
+                        <div class="challenge-tier tier-2-badge">Tier 2 + 3</div>
+                        <div class="challenge-status"><span class="lock-icon">🔒</span><span class="status-text">Locked</span></div>
+                        <p class="challenge-desc">Complete the Wednesday challenge to win a Tier 2 and Tier 3 prize.</p>
+                        <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q1 — February 2027 -->
+            <div class="quarter-block">
+                <div class="quarter-header">
+                    <h3><span class="quarter-tag">Q1</span> February 2027</h3>
+                    <p class="winners-note">🏆 Winners announced: Tuesday 9th February 2027</p>
+                </div>
+                <div class="challenges-row">
+                    <div class="challenge-card"
+                         data-unlock="2027-02-01T00:00:00Z"
+                         data-close="2027-02-05T23:59:00Z"
+                         data-link="https://hack.amazon.com/#2026powerpointtopicex/overview"
+                         data-hackathon="true">
+                        <div class="challenge-day">Monday 1st February</div>
+                        <div class="challenge-tier tier-1-badge">Tier 1</div>
+                        <div class="challenge-status"><span class="lock-icon">🔒</span><span class="status-text">Locked</span></div>
+                        <p class="challenge-desc">Submit your work on the Hackathon for a Tier 1 prize.</p>
+                        <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
+                    </div>
+                    <div class="challenge-card"
+                         data-unlock="2027-02-02T00:00:00Z"
+                         data-close="2027-02-05T23:59:00Z"
+                         data-link="https://admin.pulse.aws/staffApplication/OFT6KBWY">
+                        <div class="challenge-day">Tuesday 2nd February</div>
+                        <div class="challenge-tier tier-2-badge">Tier 2 + 3</div>
+                        <div class="challenge-status"><span class="lock-icon">🔒</span><span class="status-text">Locked</span></div>
+                        <p class="challenge-desc">Complete the Tuesday challenge to win a Tier 2 and Tier 3 prize.</p>
+                        <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
+                    </div>
+                    <div class="challenge-card"
+                         data-unlock="2027-02-03T00:00:00Z"
+                         data-close="2027-02-05T23:59:00Z"
+                         data-link="https://admin.pulse.aws/staffApplication/LS9YI6D9">
+                        <div class="challenge-day">Wednesday 3rd February</div>
+                        <div class="challenge-tier tier-2-badge">Tier 2 + 3</div>
+                        <div class="challenge-status"><span class="lock-icon">🔒</span><span class="status-text">Locked</span></div>
+                        <p class="challenge-desc">Complete the Wednesday challenge to win a Tier 2 and Tier 3 prize.</p>
+                        <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRIZE TIERS -->
+        <section class="prizes-section" id="prizes">
+            <h2>Prize tiers</h2>
+            <p class="section-intro">Each prize engagement uses a tiered system based on the complexity and cadence of the challenge. Prizes can also be awarded from quarterly recognitions, so stay tuned!</p>
+            <p class="prize-note">⚠️ Monday winners choose <strong>one item</strong> from Tier 1. Tuesday &amp; Wednesday winners receive <strong>2 prizes</strong> — one item from Tier 2 and one item from Tier 3. Your selections will be confirmed in the winnings notification.</p>
+
+            <div class="tiers-grid">
+                <div class="tier-card tier-1">
+                    <div class="tier-badge tier-1-badge">Tier 1</div>
+                    <h3>Premium swag</h3>
+                    <p class="tier-day">Monday challenges</p>
+                    <ul class="prize-list">
+                        <li>Hoodie</li>
+                        <li>Water bottle</li>
+                        <li>Baseball cap</li>
+                    </ul>
+                    <p class="pick-one">Pick 1 item</p>
+                </div>
+                <div class="tier-card tier-2">
+                    <div class="tier-badge tier-2-badge">Tier 2</div>
+                    <h3>Essential gear</h3>
+                    <p class="tier-day">Tuesday &amp; Wednesday challenges</p>
+                    <ul class="prize-list">
+                        <li>T-shirt</li>
+                        <li>Mug</li>
+                        <li>Tote bag</li>
+                    </ul>
+                    <p class="pick-one">Pick 1 item</p>
+                </div>
+                <div class="tier-card tier-3">
+                    <div class="tier-badge tier-3-badge">Tier 3</div>
+                    <h3>Everyday items</h3>
+                    <p class="tier-day">Tuesday &amp; Wednesday challenges</p>
+                    <ul class="prize-list">
+                        <li>Stress reliever</li>
+                        <li>Sticker pack</li>
+                        <li>Lanyard</li>
+                    </ul>
+                    <p class="pick-one">Pick 1 item</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <img src="amazon-smile.png" alt="Amazon" class="footer-smile">
         </div>
+    </footer>
 
-        <div class="quarter-events">
-            <h3 class="quarter-label"><span class="quarter-tag">Q2</span> In-person events</h3>
-            <div class="city-chips">
-                <span class="chip">Chennai</span>
-                <span class="chip">Luxembourg</span>
-                <span class="chip">Bangalore</span>
-                <span class="chip">Hyderabad</span>
-                <span class="chip">Vancouver</span>
-            </div>
-        </div>
-        <div class="quarter-events">
-            <h3 class="quarter-label"><span class="quarter-tag">Q3</span> In-person events</h3>
-            <div class="city-chips">
-                <span class="chip">East Palo Alto</span>
-                <span class="chip">Munich</span>
-                <span class="chip">Berlin</span>
-                <span class="chip">NYC</span>
-                <span class="chip">Austin</span>
-                <span class="chip">Seattle</span>
-                <span class="chip">Arlington</span>
-                <span class="chip">London</span>
-                <span class="chip">Dublin</span>
-                <span class="chip">Madrid</span>
-                <span class="chip">GCR</span>
-                <span class="chip">Tokyo</span>
-            </div>
-        </div>
-        <div class="quarter-events">
-            <h3 class="quarter-label"><span class="quarter-tag">Q4</span> In-person events</h3>
-            <div class="city-chips">
-                <span class="chip">São Paulo</span>
-                <span class="chip">Mexico City</span>
-                <span class="chip">Sydney</span>
-                <span class="chip">Cape Town</span>
-            </div>
-        </div>
-    </section>
+    <script src="script.js"></script>
+</body>
+</html>
 
-    <!-- PRIZE ENGAGEMENTS -->
-    <section class="engagements-section" id="engagements">
-        <h2>Intern prize engagements</h2>
-        <p class="section-intro">Each quarter features three challenges across Monday, Tuesday and Wednesday of the challenge week. Challenges unlock at 00:00 UTC on their day and close at 23:59 UTC on Friday of that week. Winners are announced the following Tuesday.</p>
 
-        <!-- Q2 — May -->
-        <div class="quarter-block">
-            <div class="quarter-header">
-                <h3><span class="quarter-tag">Q2</span> May 2026</h3>
-                <p class="winners-note">🏆 Winners announced: Tuesday 12th May</p>
-            </div>
-            <div class="challenges-row">
-                <div class="challenge-card">
-                    <div class="challenge-day">Monday 4th May</div>
-                    <div class="challenge-tier tier-1-badge">Tier 1</div>
-                    <div class="challenge-status"><span>🔒</span><span>Locked</span></div>
-                    <p class="challenge-desc">Submit your work on the Hackathon for a Tier 1 prize. Optionally grant AUTA permission to use your content.</p>
-                    <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
-                </div>
-                <div class="challenge-card">
-                    <div class="challenge-day">Tuesday 5th May</div>
-                    <div class="challenge-tier tier-2-badge">Tier 2 + 3</div>
-                    <div class="challenge-status"><span>🔒</span><span>Locked</span></div>
-                    <p class="challenge-desc">Complete the Tuesday challenge to win a Tier 2 and Tier 3 prize.</p>
-                    <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
-                </div>
-                <div class="challenge-card">
-                    <div class="challenge-day">Wednesday 6th May</div>
-                    <div class="challenge-tier tier-2-badge">Tier 2 + 3</div>
-                    <div class="challenge-status"><span>🔒</span><span>Locked</span></div>
-                    <p class="challenge-desc">Solve the AUTA crossword and submit your answers for a Tier 2 and Tier 3 prize.</p>
-                    <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Q3 — July -->
-        <div class="quarter-block">
-            <div class="quarter-header">
-                <h3><span class="quarter-tag">Q3</span> July 2026</h3>
-                <p class="winners-note">🏆 Winners announced: Tuesday 14th July</p>
-            </div>
-            <div class="challenges-row">
-                <div class="challenge-card">
-                    <div class="challenge-day">Monday 6th July</div>
-                    <div class="challenge-tier tier-1-badge">Tier 1</div>
-                    <div class="challenge-status"><span>🔒</span><span>Locked</span></div>
-                    <p class="challenge-desc">Submit your work on the Hackathon for a Tier 1 prize. Optionally grant AUTA permission to use your content.</p>
-                    <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
-                </div>
-                <div class="challenge-card">
-                    <div class="challenge-day">Tuesday 7th July</div>
-                    <div class="challenge-tier tier-2-badge">Tier 2 + 3</div>
-                    <div class="challenge-status"><span>🔒</span><span>Locked</span></div>
-                    <p class="challenge-desc">Complete the Tuesday challenge to win a Tier 2 and Tier 3 prize.</p>
-                    <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
-                </div>
-                <div class="challenge-card">
-                    <div class="challenge-day">Wednesday 8th July</div>
-                    <div class="challenge-tier tier-2-badge">Tier 2 + 3</div>
-                    <div class="challenge-status"><span>🔒</span><span>Locked</span></div>
-                    <p class="challenge-desc">Complete the Wednesday challenge to win a Tier 2 and Tier 3 prize.</p>
-                    <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Q4 — November -->
-        <div class="quarter-block">
-            <div class="quarter-header">
-                <h3><span class="quarter-tag">Q4</span> November 2026</h3>
-                <p class="winners-note">🏆 Winners announced: Tuesday 10th November</p>
-            </div>
-            <div class="challenges-row">
-                <div class="challenge-card">
-                    <div class="challenge-day">Monday 2nd November</div>
-                    <div class="challenge-tier tier-1-badge">Tier 1</div>
-                    <div class="challenge-status"><span>🔒</span><span>Locked</span></div>
-                    <p class="challenge-desc">Submit your work on the Hackathon for a Tier 1 prize.</p>
-                    <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
-                </div>
-                <div class="challenge-card">
-                    <div class="challenge-day">Tuesday 3rd November</div>
-                    <div class="challenge-tier tier-2-badge">Tier 2 + 3</div>
-                    <div class="challenge-status"><span>🔒</span><span>Locked</span></div>
-                    <p class="challenge-desc">Complete the Tuesday challenge to win a Tier 2 and Tier 3 prize.</p>
-                    <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
-                </div>
-                <div class="challenge-card">
-                    <div class="challenge-day">Wednesday 4th November</div>
-                    <div class="challenge-tier tier-2-badge">Tier 2 + 3</div>
-                    <div class="challenge-status"><span>🔒</span><span>Locked</span></div>
-                    <p class="challenge-desc">Complete the Wednesday challenge to win a Tier 2 and Tier 3 prize.</p>
-                    <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Q1 — February 2027 -->
-        <div class="quarter-block">
-            <div class="quarter-header">
-                <h3><span class="quarter-tag">Q1</span> February 2027</h3>
-                <p class="winners-note">🏆 Winners announced: Tuesday 9th February 2027</p>
-            </div>
-            <div class="challenges-row">
-                <div class="challenge-card">
-                    <div class="challenge-day">Monday 1st February</div>
-                    <div class="challenge-tier tier-1-badge">Tier 1</div>
-                    <div class="challenge-status"><span>🔒</span><span>Locked</span></div>
-                    <p class="challenge-desc">Submit your work on the Hackathon for a Tier 1 prize.</p>
-                    <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
-                </div>
-                <div class="challenge-card">
-                    <div class="challenge-day">Tuesday 2nd February</div>
-                    <div class="challenge-tier tier-2-badge">Tier 2 + 3</div>
-                    <div class="challenge-status"><span>🔒</span><span>Locked</span></div>
-                    <p class="challenge-desc">Complete the Tuesday challenge to win a Tier 2 and Tier 3 prize.</p>
-                    <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
-                </div>
-                <div class="challenge-card">
-                    <div class="challenge-day">Wednesday 3rd February</div>
-                    <div class="challenge-tier tier-2-badge">Tier 2 + 3</div>
-                    <div class="challenge-status"><span>🔒</span><span>Locked</span></div>
-                    <p class="challenge-desc">Complete the Wednesday challenge to win a Tier 2 and Tier 3 prize.</p>
-                    <a class="challenge-btn disabled" aria-disabled="true">Coming soon</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRIZE TIERS -->
-    <section class="prizes-section" id="prizes">
-        <h2>Prize tiers</h2>
-        <p class="section-intro">Each prize engagement uses a tiered system based on the complexity and cadence of the challenge. Prizes can also be awarded from quarterly recognitions, so stay tuned!</p>
-        <p class="prize-note">⚠️ Monday winners choose <strong>one item</strong> from Tier 1. Tuesday & Wednesday winners receive <strong>2 prizes</strong> — one item from Tier 2 and one item from Tier 3. Your selections will be confirmed in the winnings notification.</p>
-
-        <div class="tiers-grid">
-            <div class="tier-card tier-1">
-                <div class="tier-badge tier-1-badge">Tier 1</div>
-                <h3>Premium swag</h3>
-                <p class="tier-day">Monday challenges</p>
-                <ul class="prize-list">
-                    <li>Hoodie</li>
-                    <li>Water bottle</li>
-                    <li>Baseball cap</li>
-                </ul>
-                <p class="pick-one">Pick 1 item</p>
-            </div>
-            <div class="tier-card tier-2">
-                <div class="tier-badge tier-2-badge">Tier 2</div>
-                <h3>Essential gear</h3>
-                <p class="tier-day">Tuesday & Wednesday challenges</p>
-                <ul class="prize-list">
-                    <li>T-shirt</li>
-                    <li>Mug</li>
-                    <li>Tote bag</li>
-                </ul>
-                <p class="pick-one">Pick 1 item</p>
-            </div>
-            <div class="tier-card tier-3">
-                <div class="tier-badge tier-3-badge">Tier 3</div>
-                <h3>Everyday items</h3>
-                <p class="tier-day">Tuesday & Wednesday challenges</p>
-                <ul class="prize-list">
-                    <li>Stress reliever</li>
-                    <li>Sticker pack</li>
-                    <li>Lanyard</li>
-                </ul>
-                <p class="pick-one">Pick 1 item</p>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<footer>
-    <div class="container">
-        <img src="amazon-smile.png" alt="Amazon" class="footer-smile">
-    </div>
-</footer>
-</body> </html>
