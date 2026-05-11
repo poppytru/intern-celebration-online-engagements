@@ -1,3 +1,4 @@
+/* ===== Amazon Brand Tokens ===== */
 :root {
     --squid-ink: #161D26;
     --smile-orange: #FF6200;
@@ -88,7 +89,7 @@ section { margin-bottom: 80px; }
 
 .events-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     margin-bottom: 40px;
 }
