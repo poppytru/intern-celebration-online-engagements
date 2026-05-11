@@ -218,57 +218,37 @@ section { margin-bottom: 80px; }
     pointer-events: none;
 }
 
-
-/* Prizes Section */
-.prizes-section {
-    padding: 40px 24px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.prizes-section h2 {
-    font-family: 'Amazon Ember', sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--squid-ink);
-    margin-bottom: 12px;
-}
-
-.prizes-section > p {
-    font-size: 16px;
-    color: #444;
-    line-height: 1.7;
-    margin-bottom: 24px;
-}
-
+/* ===== Prizes Section ===== */
 .prizes-gallery {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 24px;
-    justify-content: center;
-    flex-wrap: wrap;
+    margin-top: 32px;
 }
 
 .prize-item {
     text-align: center;
-    background: var(--white);
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 16px;
 }
 
-.prize-item img {
-    width: 200px;
-    height: 200px;
+.prize-img {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    background: transparent;
 }
 
-.prize-item span {
-    display: block;
-    margin-top: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #555;
+.prize-img:hover {
+    transform: scale(1.05);
+}
+
+.prize-label {
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--squid-ink);
 }
 
 /* ===== Footer ===== */
