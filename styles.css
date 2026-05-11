@@ -218,69 +218,57 @@ section { margin-bottom: 80px; }
     pointer-events: none;
 }
 
-/* ===== Prizes Section ===== */
-.prize-note {
-    background: #FFF3E0;
-    border-left: 4px solid var(--smile-orange);
-    padding: 16px 20px;
-    margin-bottom: 32px;
-    border-radius: 0 8px 8px 0;
-    font-size: 16px;
-    max-width: 860px;
+
+/* Prizes Section */
+.prizes-section {
+    padding: 40px 24px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.tiers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 28px;
-}
-
-.tier-card {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 32px;
-    box-shadow: 0 2px 12px rgba(22,29,38,.08);
-    position: relative;
-    overflow: hidden;
-}
-.tier-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 6px;
-}
-.tier-1::before { background: var(--tier1); }
-.tier-2::before { background: var(--tier2); }
-.tier-3::before { background: var(--tier3); }
-
-.tier-badge {
-    display: inline-block;
-    color: var(--white);
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 13px;
+.prizes-section h2 {
+    font-family: 'Amazon Ember', sans-serif;
+    font-size: 28px;
     font-weight: 700;
+    color: var(--squid-ink);
     margin-bottom: 12px;
 }
 
-.tier-day { font-size: 14px; color: #666; margin-bottom: 16px; }
-
-.prize-list { list-style: none; padding: 0; }
-.prize-list li {
-    padding: 10px 0;
-    border-bottom: 1px solid var(--off-white);
-    font-size: 18px;
+.prizes-section > p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 24px;
 }
-.prize-list li:last-child { border-bottom: none; }
-.prize-list li::before { content: '✓ '; color: var(--smile-orange); font-weight: 700; margin-right: 8px; }
 
-.pick-one {
-    margin-top: 16px;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--smile-orange);
-    text-transform: uppercase;
-    letter-spacing: .5px;
+.prizes-gallery {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.prize-item {
+    text-align: center;
+    background: var(--white);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.prize-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.prize-item span {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
 }
 
 /* ===== Footer ===== */
