@@ -109,7 +109,7 @@ section { margin-bottom: 80px; }
     padding: 28px;
     background: var(--off-white);
     border-radius: 12px;
-    border-left: 5px solid var(--smile-orange);
+    border-left: 5px solid var(---orange);
 }
 .quarter-label {
     display: flex;
@@ -259,7 +259,8 @@ footer {
     padding: 40px 0;
     text-align: center;
 }
-.footer-smile {
+.footer-banner {
+    background: var(--smile-orange);
     width: 120px;
     height: auto;
     filter: brightness(0) saturate(100%) invert(44%) sepia(96%) saturate(2000%) hue-rotate(10deg) brightness(100%) contrast(105%);
