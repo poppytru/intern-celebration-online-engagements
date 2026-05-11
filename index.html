@@ -90,30 +90,22 @@
         .challenge-btn.active { background: #FF6200; color: #fff; cursor: pointer; }
         .challenge-btn.active:hover { background: #E55800; }
         .challenge-btn.closed-btn { background: #ccc; color: #666; cursor: not-allowed; }
-
-        /* Prize Tiers */
-        .prize-note { font-size: 14px; color: #555; background: #fff; border-left: 4px solid #FF6200; padding: 12px 16px; border-radius: 4px; margin-bottom: 24px; }
-        .tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .tier-card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 28px;
-            text-align: center;
-            border: 1px solid #E8E5E0;
-            transition: box-shadow 0.2s ease, transform 0.2s ease;
-        }
-        .tier-card:hover { box-shadow: 0 6px 20px rgba(22,29,38,0.08); transform: translateY(-2px); }
-        .tier-card.tier-1 { border-top: 4px solid #FF6200; }
-        .tier-card.tier-2 { border-top: 4px solid #161D26; }
-        .tier-card.tier-3 { border-top: 4px solid #888; }
-        .tier-card h3 { font-size: 18px; font-weight: 700; margin: 12px 0 4px; }
-        .tier-card h3::after { display: none; }
-        .tier-day { font-size: 13px; color: #777; margin-bottom: 12px; }
-        .prize-list { list-style: none; padding: 0; }
-        .prize-list li { font-size: 14px; color: #333; padding: 8px 0; border-bottom: 1px solid #F0F0F0; }
-        .prize-list li:last-child { border-bottom: none; }
-        .pick-one { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #FF6200; margin-top: 12px; }
-        .tier-badge { display: inline-block; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 12px; }
+       
+<!-- Prizes Section -->
+<section id="prizes" class="prizes-section">
+    <h2>Prizes</h2>
+    <p>Each challenge will have several winners selected globally, with the opportunity to win some cool SWAG depending on each challenge. Prizes can also be awarded from quarterly recognitions, so stay tuned!</p>
+    <div class="prizes-gallery">
+        <div class="prize-item">
+            <img src="mug.png" alt="Amazon branded green ceramic mug">
+            <span>Amazon Mug</span>
+        </div>
+        <div class="prize-item">
+            <img src="navy-hoodie.png" alt="Amazon branded navy hoodie">
+            <span>Amazon Hoodie</span>
+        </div>
+    </div>
+</section>
 
         /* Footer */
         footer { background: #161D26; padding: 32px; text-align: center; margin-top: 48px; }
@@ -187,6 +179,13 @@
                 <div class="city-chips">
                     <span class="chip">São Paulo</span>
                     <span class="chip">Mexico City</span>
+                    <span class="chip">Sydney</span>
+                    <span class="chip">Cape Town</span>
+                </div>
+            </div>
+            <div class="quarter-events">
+                <h3 class="quarter-label"><span class="quarter-tag">Q1</span> In-person events</h3>
+                <div class="city-chips">
                     <span class="chip">Sydney</span>
                     <span class="chip">Cape Town</span>
                 </div>
@@ -366,48 +365,21 @@
             </div>
         </section>
 
-        <!-- PRIZE TIERS -->
-        <section class="prizes-section" id="prizes">
-            <h2>Prize tiers</h2>
-            <p class="section-intro">Each prize engagement uses a tiered system based on the complexity and cadence of the challenge. Prizes can also be awarded from quarterly recognitions, so stay tuned!</p>
-            <p class="prize-note">⚠️ Monday winners choose <strong>one item</strong> from Tier 1. Tuesday &amp; Wednesday winners receive <strong>2 prizes</strong> — one item from Tier 2 and one item from Tier 3. Your selections will be confirmed in the winnings notification.</p>
-
-            <div class="tiers-grid">
-                <div class="tier-card tier-1">
-                    <div class="tier-badge tier-1-badge">Tier 1</div>
-                    <h3>Premium swag</h3>
-                    <p class="tier-day">Monday challenges</p>
-                    <ul class="prize-list">
-                        <li>Hoodie</li>
-                        <li>Water bottle</li>
-                        <li>Baseball cap</li>
-                    </ul>
-                    <p class="pick-one">Pick 1 item</p>
-                </div>
-                <div class="tier-card tier-2">
-                    <div class="tier-badge tier-2-badge">Tier 2</div>
-                    <h3>Essential gear</h3>
-                    <p class="tier-day">Tuesday &amp; Wednesday challenges</p>
-                    <ul class="prize-list">
-                        <li>T-shirt</li>
-                        <li>Mug</li>
-                        <li>Tote bag</li>
-                    </ul>
-                    <p class="pick-one">Pick 1 item</p>
-                </div>
-                <div class="tier-card tier-3">
-                    <div class="tier-badge tier-3-badge">Tier 3</div>
-                    <h3>Everyday items</h3>
-                    <p class="tier-day">Tuesday &amp; Wednesday challenges</p>
-                    <ul class="prize-list">
-                        <li>Stress reliever</li>
-                        <li>Sticker pack</li>
-                        <li>Lanyard</li>
-                    </ul>
-                    <p class="pick-one">Pick 1 item</p>
-                </div>
-            </div>
-        </section>
+<!-- Prizes Section -->
+<section id="prizes" class="prizes-section">
+    <h2>Prizes</h2>
+    <p>Each challenge will have several winners selected globally, with the opportunity to win some cool SWAG depending on each challenge. Prizes can also be awarded from quarterly recognitions, so stay tuned!</p>
+    <div class="prizes-gallery">
+        <div class="prize-item">
+            <img src="mug.png" alt="Amazon branded green ceramic mug">
+            <span>Amazon Mug</span>
+        </div>
+        <div class="prize-item">
+            <img src="navy-hoodie.png" alt="Amazon branded navy hoodie">
+            <span>Amazon Hoodie</span>
+        </div>
+    </div>
+</section>
 
     </main>
 
